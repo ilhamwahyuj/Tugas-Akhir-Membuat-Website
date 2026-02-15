@@ -68,9 +68,8 @@ article p {
     text-align: justify;
 }
 
-/* Aside (biodata) */
+/* Styling untuk aside */
 aside {
-    flex: 1;                       /* Lebar 1 bagian */
     background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
@@ -78,25 +77,46 @@ aside {
     text-align: center;
 }
 
-aside h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #18bc9c;
-}
-
-aside img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;            /* Membuat foto menjadi lingkaran */
-    margin-bottom: 1rem;
+/* Foto profil */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;        /* Memastikan foto tidak gepeng */
+    border-radius: 50%;
     border: 3px solid #18bc9c;
+    margin: 1rem auto;
+    display: block;
 }
 
-aside p {
-    margin-bottom: 0.5rem;
+/* Container biodata menggunakan grid agar rapi */
+.biodata-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;  /* Lebar label 100px, nilai sisa */
     text-align: left;
-    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    align-items: baseline;
+}
+
+.label {
+    font-weight: bold;
+    color: #2c3e50;
+    padding-right: 1rem;
+}
+
+.value {
+    color: #333;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    .biodata-item {
+        grid-template-columns: 1fr;     /* Label di atas nilai */
+        gap: 0.25rem;
+    }
+    
+    .label {
+        padding-right: 0;
+    }
 }
 
 /* Footer */
